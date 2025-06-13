@@ -2,18 +2,93 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Video Playback Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DApp Project</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    .intro {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+    }
+    .accordion {
+      width: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .accordion-item {
+      background-color: #fff;
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    .accordion-title {
+      padding: 15px;
+      cursor: pointer;
+      background-color: #eee;
+      font-weight: bold;
+    }
+    .accordion-content {
+      display: none;
+      padding: 15px;
+      background-color: #f4f4f4;
+    }
+  </style>
 </head>
-<body style="text-align: center; font-family: sans-serif; background-color: #f9f9f9; padding: 2em;">
+<body>
 
-  <h1>Demo Video</h1>
+  <!-- Intro Section -->
+  <div class="intro">
+    <h1>Welcome to Our DApp</h1>
+    <p>This is a decentralized app demo showcasing video uploads, interactive content, and dynamic sections.</p>
+  </div>
 
-  <video width="720" height="auto" controls>
-    <source src="demo.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  <!-- Curtain (Accordion) Section -->
+  <div class="accordion">
+    <div class="accordion-item">
+      <div class="accordion-title" onclick="toggleAccordion(this)">
+        🔍 Project Overview
+      </div>
+      <div class="accordion-content">
+        <p>This section explains what the DApp is about and how it works behind the scenes.</p>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-title" onclick="toggleAccordion(this)">
+        📦 Features
+      </div>
+      <div class="accordion-content">
+        <ul>
+          <li>Video uploads</li>
+          <li>Smart contract integration</li>
+          <li>User-friendly UI</li>
+        </ul>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-title" onclick="toggleAccordion(this)">
+        📞 Contact
+      </div>
+      <div class="accordion-content">
+        <p>Email: team@dappsite.com</p>
+        <p>Twitter: @dappproject</p>
+      </div>
+    </div>
+  </div>
 
-  <p>If the video doesn't play, please try using Chrome or Safari.</p>
+  <script>
+    function toggleAccordion(el) {
+      const content = el.nextElementSibling;
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    }
+  </script>
 
 </body>
 </html>
